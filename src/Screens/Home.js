@@ -49,7 +49,7 @@ const WeatherForecast = () => {
       {loading && <Text>Loading...</Text>}
       {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
       
-      <ScrollView>
+      <ScrollView  style={styles.scroleview}>
         {weatherData.length > 0 && weatherData.map((item, index) => (
           <View key={index} style={styles.cardView}>
             <Table borderStyle={styles.tableBorder}>
@@ -95,10 +95,15 @@ const WeatherForecast = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 20,
-    backgroundColor: '#fff',
+     backgroundColor: '#fff',
+      height: '100%'
   },
+  scroleview: {
+      flex: 1,
+       height: '100%'
+  },
+
   title: {
     fontSize: 24,
     textAlign: 'center',
@@ -113,28 +118,26 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   cardView: {
-    marginBottom: 10,
-    padding: 5,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    elevation: 5,
-    borderRadius: 10,
+    margin :5,
+    padding: 2,
     backgroundColor: 'white',
   },
   date: {
+    height: 40,
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
+    borderWidth: 1,
     backgroundColor:'#FFA500',
     color: '#000',
   },
   tableBorder: {
     borderWidth: 1,
-    borderColor: '#c8e1ff',
+    borderColor: '#000',
   },
   header: {
     height: 40,
+    borderWidth: 1,
     backgroundColor: '#f1f8ff',
   },
   headerText: {
@@ -143,6 +146,8 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+    
+    borderColor: '#000',
   },
   text: {
     textAlign: 'center',
@@ -152,12 +157,14 @@ const styles = StyleSheet.create({
   cell: {
     flex: 1,
     borderWidth: 1,
-    borderColor: '#c8e1ff',
+    borderColor: '#000',
+    height: 40,
+    backgroundColor: '#f1f8ff',
   },
   cellFull: {
     flex: 2,
     borderWidth: 1,
-    borderColor: '#c8e1ff',
+    borderColor: '#000',
   },
   error: {
     color: 'red',
